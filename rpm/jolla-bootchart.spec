@@ -8,7 +8,7 @@ URL:        http://github.com/sofar/bootchart
 Source0:    jolla-bootchart-%{version}.tar.gz
 Source1:    bootchartd.conf
 
-Provides:   bootchart
+Conflicts:  bootchart
 
 %description
 Monitors where the system spends its time at start, creating a graph of all processes, disk utilization, and wait time.
@@ -31,6 +31,6 @@ install -m 644 %{SOURCE1} %{buildroot}/etc/
 
 %files
 %defattr(-,root,root,-)
+%config /etc/bootchartd.conf
 /usr/sbin/bootchartd
-/etc/bootchartd.conf
 %{_datadir}/doc/bootchart/bootchartd.conf.example
