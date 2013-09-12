@@ -7,6 +7,7 @@ License:    GPLv2
 URL:        http://github.com/sofar/bootchart
 Source0:    jolla-bootchart-%{version}.tar.gz
 Source1:    bootchartd.conf
+Source2:    bootchartd.active
 
 Conflicts:  bootchart
 
@@ -28,9 +29,11 @@ rm -rf %{buildroot}
 %make_install
 install -d -m 755 %{buildroot}/etc
 install -m 644 %{SOURCE1} %{buildroot}/etc/
+install -m 644 %{SOURCE2} %{buildroot}/etc/
 
 %files
 %defattr(-,root,root,-)
 %config /etc/bootchartd.conf
+%config /etc/bootchartd.active
 /usr/sbin/bootchartd
 %{_datadir}/doc/bootchart/bootchartd.conf.example

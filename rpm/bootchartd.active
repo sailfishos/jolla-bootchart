@@ -1,0 +1,8 @@
+#
+# bootchartd activation - /etc/bootchartd.active
+#
+
+#
+# please remove this file if you don't want generate
+# bootchart automatically on each boot
+#
