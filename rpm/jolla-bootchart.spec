@@ -6,14 +6,15 @@ Group:      Development/Tools
 License:    LGPLv2.1+
 BuildArch:  noarch
 URL:        http://cgit.freedesktop.org/systemd/systemd/
-Source0:    bootchartd.active
+Source0:    %{name}-%{version}.tar.gz
+Source1:    bootchartd.active
 
 %description
 Enabler for systemd boot time graph generator
 
 %install
 install -d -m 755 %{buildroot}/etc
-install -m 644 %{SOURCE0} %{buildroot}/etc/
+install -m 644 %{SOURCE1} %{buildroot}/etc/
 
 %files
 %defattr(-,root,root,-)
