@@ -1,39 +1,20 @@
 Name:       jolla-bootchart
-Summary:    Boot time graph generator
+Summary:    Enabler for systemd boot chart
 Version:    1.20
 Release:    1
 Group:      Development/Tools
-License:    GPLv2
-URL:        http://github.com/sofar/bootchart
-Source0:    jolla-bootchart-%{version}.tar.gz
-Source1:    bootchartd.conf
-Source2:    bootchartd.active
-
-Conflicts:  bootchart
+License:    LGPLv2.1+
+BuildArch:  noarch
+URL:        http://cgit.freedesktop.org/systemd/systemd/
+Source0:    bootchartd.active
 
 %description
-Monitors where the system spends its time at start, creating a graph of all processes, disk utilization, and wait time.
-
-%prep
-%setup -q
-
-%build
-cd bootchart
-./autogen.sh
-%configure
-make %{?jobs:-j%jobs}
+Enabler for systemd boot time graph generator
 
 %install
-cd bootchart
-rm -rf %{buildroot}
-%make_install
 install -d -m 755 %{buildroot}/etc
-install -m 644 %{SOURCE1} %{buildroot}/etc/
-install -m 644 %{SOURCE2} %{buildroot}/etc/
+install -m 644 %{SOURCE0} %{buildroot}/etc/
 
 %files
 %defattr(-,root,root,-)
-%config /etc/bootchartd.conf
 %config /etc/bootchartd.active
-/usr/sbin/bootchartd
-%{_datadir}/doc/bootchart/bootchartd.conf.example
