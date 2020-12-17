@@ -1,6 +1,6 @@
 Name:       jolla-bootchart
 Summary:    Enabler for systemd boot chart
-Version:    1.20
+Version:    1.21
 Release:    1
 License:    LGPLv2+
 BuildArch:  noarch
