@@ -4,7 +4,7 @@ Version:    1.20
 Release:    1
 License:    LGPLv2+
 BuildArch:  noarch
-URL:        http://cgit.freedesktop.org/systemd/systemd/
+URL:        https://github.com/systemd/systemd
 Source0:    %{name}-%{version}.tar.gz
 Source1:    bootchartd.active
 
