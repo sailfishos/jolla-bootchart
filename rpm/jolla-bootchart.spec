@@ -11,6 +11,11 @@ Source1:    bootchartd.active
 %description
 Enabler for systemd boot time graph generator
 
+%prep
+%setup -q -n %{name}-%{version}
+
+%build
+
 %install
 install -d -m 755 %{buildroot}/etc
 install -m 644 %{SOURCE1} %{buildroot}/etc/
