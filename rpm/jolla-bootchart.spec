@@ -7,6 +7,7 @@ BuildArch:  noarch
 URL:        https://github.com/systemd/systemd
 Source0:    %{name}-%{version}.tar.gz
 Source1:    bootchartd.active
+Requires:   systemd-bootchart
 
 %description
 Enabler for systemd boot time graph generator
